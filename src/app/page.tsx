@@ -7,6 +7,9 @@ export default function Home() {
       <main className={styles.main}>
         Coming Soon!
       </main>
+      <footer>
+        <a href="https://www.webbdevdesign.ca/">Return to my portfolio</a>
+      </footer>
     </div>
   );
 }
