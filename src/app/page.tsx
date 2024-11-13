@@ -9,7 +9,7 @@ import BoltIcon from '@mui/icons-material/Bolt';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import Tab, { tabClasses } from '@mui/material/Tab';
+import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
