@@ -22,9 +22,9 @@ import { Senses } from '@/app/components/Senses';
 import { Skills } from '@/app/components/Skills';
 
 export default function Home() {
-  const [tab, setTab] = useState("1");
+  const [tab, setTab] = useState(1);
 
-  const handleTabChange = (e, index) =>  setTab(index);
+  const handleTabChange = (e: React.SyntheticEvent, index: number) => setTab(index);
 
   const TabItem = styled(Tab)({
     color: '#bbb',
@@ -60,15 +60,15 @@ export default function Home() {
             <TabContext value={tab}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <TabList onChange={handleTabChange} aria-label="lab API tabs example">
-                  <TabItem label="Background" value="1" />
-                  <TabItem label="Features and Traits" value="2" disabled />
-                  <TabItem label="Actions" value="3" disabled />
+                  <TabItem label="Background" value={1} />
+                  <TabItem label="Features and Traits" value={2} />
+                  <TabItem label="Actions" value={3} disabled />
                 </TabList>
               </Box>
-              <TabPanel value="1">
+              <TabPanel value={1}>
                 <Background></Background>
               </TabPanel>
-              <TabPanel value="2">
+              <TabPanel value={2}>
                 <FeaturesTraits></FeaturesTraits>
               </TabPanel>
             </TabContext>

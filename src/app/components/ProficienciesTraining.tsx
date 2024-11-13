@@ -9,6 +9,7 @@ export function ProficienciesTraining() {
         <Typography sx={{ fontSize: '15px', marginBottom: 1, textTransform: 'uppercase' }} variant="h4">Proficiencies & Training</Typography>
         <Typography sx={{ fontSize: '13px', marginBottom: 1, textTransform: 'uppercase' }} variant="h5">Education</Typography>
         <Box sx={{ fontSize: '14px', marginBottom: 1 }}>
+          <Typography sx={{ fontSize: '13px' }}>10+ years of experience</Typography>
           <Typography sx={{ fontSize: '13px' }}>Post-secondary Education</Typography>
         </Box>
         <Typography sx={{ borderTop: 1, fontSize: '14px', paddingY: 1, textTransform: 'uppercase' }} variant="h5">Tools</Typography>
