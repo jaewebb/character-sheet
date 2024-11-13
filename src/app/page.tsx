@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
-import { styled } from "@mui/material/styles"
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 import BoltIcon from '@mui/icons-material/Bolt';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
@@ -26,17 +28,16 @@ export default function Home() {
 
   const handleTabChange = (e: React.SyntheticEvent, index: number) => setTab(index);
 
-  const TabItem = styled(Tab)({
-    color: '#bbb',
-    [`&.${tabClasses.disabled}`]: {
-      color: '#555'
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  
+  const theme = createTheme({
+    colorSchemes: {
+      dark: prefersDarkMode,
     },
-    [`&.${tabClasses.selected}`]: {
-      color: '#fff'
-    }
-  })
+  });
+
   return (
-    <>
+    <ThemeProvider theme={theme}>
     <main>
       <Character />
       <Grid container sx={{ marginX: 2 }}>
@@ -60,9 +61,9 @@ export default function Home() {
             <TabContext value={tab}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <TabList onChange={handleTabChange} aria-label="lab API tabs example">
-                  <TabItem label="Background" value={1} />
-                  <TabItem label="Features and Traits" value={2} />
-                  <TabItem label="Actions" value={3} disabled />
+                  <Tab label="Background" value={1} />
+                  <Tab label="Features and Traits" value={2} />
+                  <Tab label="Actions" value={3} disabled />
                 </TabList>
               </Box>
               <TabPanel value={1}>
@@ -81,6 +82,6 @@ export default function Home() {
       I still have a lot I&apos;d like to add to this page!<br />
       <a href="https://www.webbdevdesign.ca/">Return to my portfolio</a>
     </footer>
-    </>
+    </ThemeProvider>
   );
 }

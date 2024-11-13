@@ -18,12 +18,14 @@ export function Senses() {
       </Grid>
       { senses.map((sense: Sense) => {
         return (
-            <Grid key={sense.name} size={12} sx={{ fontSize: '14px'}}>
-              <Box>
-                <Typography sx={{ border: 1, borderRadius: '100%', display: 'inline', padding: 1 }}>{sense.base}</Typography>
-                <Typography sx={{ border: 1, borderRadius: 1, display: 'inline', marginLeft: 1, padding: 1 }}>{sense.name}</Typography>
-              </Box>
-            </Grid>
+          <Grid display="flex" alignItems="center" key={sense.name}>
+            <Box sx={{ border: 1, borderRadius: '100%', padding: 1 }}>
+              <Typography variant="body2">{sense.base}</Typography>
+            </Box>
+            <Box sx={{ border: 1, borderRadius: 1, marginLeft: 1, padding: 1 }}>
+              <Typography>{sense.name}</Typography>
+            </Box>
+          </Grid>
         )
       })
     }

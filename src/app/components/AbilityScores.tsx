@@ -17,9 +17,9 @@ export function AbilityScores() {
     abilityScores.map((score: AbilityScore) => {
       return (
         <Grid key={score.name} size={2} sx={{ border: 1, borderRadius: 2, textAlign: 'center', paddingY: 2}}>
-          <Typography sx={{ fontSize: '12px', textTransform: 'uppercase' }}>{score.name}</Typography>
-          <Typography sx={{ border: 1, borderRadius: 1, fontSize: 'h4.fontSize', margin: 1 }}>{score.modifier}</Typography>
-          <Typography sx={{ border: 1, borderRadius: '100%', fontSize: 'h6.fontSize', marginX: 3 }}>{score.base}</Typography>
+          <Typography variant="overline">{score.name}</Typography>
+          <Typography sx={{ border: 1, borderRadius: 1, fontSize: 'h4.fontSize', marginX: 1, marginBottom: 1 }} variant="h3">{score.modifier}</Typography>
+          <Typography sx={{ border: 1, borderRadius: '100%', fontSize: 'h6.fontSize', marginX: 3 }} variant="h4">{score.base}</Typography>
         </Grid>
       )
     })

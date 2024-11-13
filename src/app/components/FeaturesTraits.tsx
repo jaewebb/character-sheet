@@ -4,14 +4,20 @@ import Typography from '@mui/material/Typography';
 
 export function FeaturesTraits() {
   return (
-    <Grid container spacing={2} sx={{ marginBottom: 1, marginTop: 3.5, marginX: 2 }}>
+    <Grid container spacing={2}>
       <Grid display="flex" alignItems="center" size="grow">
-        <Box sx={{ marginLeft: 2 }}>
-          <Typography sx={{ fontSize: '13px' }}>Hockey Player</Typography>
-          <Typography sx={{ fontSize: '13px' }}>Gamer</Typography>
-          <Typography sx={{ fontSize: '13px' }}>Digital Artist</Typography>
+        <Box>
+          <Typography variant="overline">Hockey Player</Typography>
+          <Typography variant="body2">You spend at least an hour a week playing hockey. It boosts your mood and keeps you mentally and physically sharp.</Typography>
+          <Typography variant="body2">Benefit: +1 to saving throws related to balance and teamwork</Typography>
+          <Typography variant="overline">Gamer</Typography>
+          <Typography variant="body2">Playing games boosts your mood.</Typography>
+          <Typography variant="body2">Benefit: +1 to saving throws related to hand-eye coordination</Typography>
+          <Typography variant="overline">Digital Artist</Typography>
+          <Typography variant="body2">Making art boosts your mood.</Typography>
+          <Typography variant="body2">Benefit: +1 to saving throws related to creativity</Typography>
         </Box>
       </Grid>
-    </Grid>
+     </Grid>
   )
 }
