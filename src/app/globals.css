@@ -25,3 +25,11 @@ body {
     color-scheme: dark;
   }
 }
+
+.h-full {
+  height: 100%
+}
+
+.w-full {
+  width: 100%
+}
