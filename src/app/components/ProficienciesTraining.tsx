@@ -1,11 +1,12 @@
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid2';
+import Paper from '@mui/material/Paper';
 import Typography from "@mui/material/Typography";
 
 export function ProficienciesTraining() {
   return (
-    <Grid sx={{ border: 1, borderRadius: 2, padding: 2 }} container spacing={2}>
+    <Grid component={Paper} container spacing={2} sx={{ borderRadius: 2, padding: 2 }}>
       <Grid size={12}>
         <Typography component="h4" variant="overline">Proficiencies & Training</Typography>
         <Typography component="h5" variant="overline">Education</Typography>

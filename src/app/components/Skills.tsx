@@ -1,11 +1,12 @@
 import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-// import Paper from '@mui/material/Paper';
+import { Typography } from '@mui/material';
 
 import type { Skill } from '@/app/types/Skill'
 
@@ -44,14 +45,13 @@ const rows = skills.map(skill => createData(skill.bonus, skill.expertise, skill.
 
 export function Skills() {
   return (
-    // <TableContainer component={Paper}>
-    <TableContainer>
+    <TableContainer component={Paper} sx={{ borderRadius: 2, pb: 0.5 }}>
       <Table aria-label="Skills table" size="small">
         <TableHead>
           <TableRow>
-            <TableCell align="center">Prof</TableCell>
-            <TableCell>Skill</TableCell>
-            <TableCell align="right">Bonus</TableCell>
+            <TableCell align="center"><Typography variant="overline">Prof</Typography></TableCell>
+            <TableCell><Typography variant="overline">Skill</Typography></TableCell>
+            <TableCell align="right"><Typography variant="overline">Bonus</Typography></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

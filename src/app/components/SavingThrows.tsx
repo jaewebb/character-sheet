@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
+import Paper from '@mui/material/Paper';
 import Typography from "@mui/material/Typography";
 
 import type { SavingThrow } from '@/app/types/SavingThrow'
@@ -15,15 +16,15 @@ export function SavingThrows() {
   ]
 
   return (
-    <Grid sx={{ border: 1, borderRadius: 2, padding: 2 }} container spacing={2}>
+    <Grid component={Paper} container spacing={2} sx={{ borderRadius: 2, padding: 2 }}>
       <Grid size={12}>
-        <Typography sx={{ fontSize: '15px', textTransform: 'uppercase'}}>Saving Throws</Typography>
+        <Typography variant="overline">Saving Throws</Typography>
       </Grid>
       { saves.map((save: SavingThrow) => {
         return (
-            <Grid key={save.name} size={6} sx={{ border: 1, borderRadius: 2, textAlign: 'center', py: 1}}>
-              <Box>{save.name} {save.base}</Box>
-            </Grid>
+          <Grid key={save.name} size={6} sx={{ border: 1, borderRadius: 2, textAlign: 'center', py: 1}}>
+            <Box>{save.name} {save.base}</Box>
+          </Grid>
         )
       })
     }

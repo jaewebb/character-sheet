@@ -9,6 +9,7 @@ import BoltIcon from '@mui/icons-material/Bolt';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import Paper from '@mui/material/Paper';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
@@ -52,13 +53,13 @@ export default function Home() {
               <Senses />
               <ProficienciesTraining />
             </Grid>
-            <Grid sx={{ border: 1, borderRadius: 2, padding: 2, textAlign: 'left'}} size={{ xs: 12, sm: 6 }}>
+            <Grid size={{ xs: 12, sm: 6 }} sx={{ borderRadius: 2 }}>
               <Skills />
             </Grid>
           </Grid>
         </Grid>
         <Grid size={{ xs: 12, lg: 5, xl: 6 }}>
-          <Box sx={{ border: 1, borderRadius: 2, mx: {xs: 0, lg: 2}, my: 1 }}>
+          <Box component={Paper} sx={{ borderRadius: 2, mx: {xs: 0, lg: 2}, my: 1 }}>
             <TabContext value={tab}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <TabList onChange={handleTabChange} aria-label="lab API tabs example">
