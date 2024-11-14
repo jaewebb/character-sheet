@@ -19,12 +19,8 @@ export function Senses() {
       { senses.map((sense: Sense) => {
         return (
           <Grid display="flex" alignItems="center" key={sense.name}>
-            <Box sx={{ border: 1, borderRadius: '100%', padding: 1 }}>
-              <Typography variant="body2">{sense.base}</Typography>
-            </Box>
-            <Box sx={{ border: 1, borderRadius: 1, marginLeft: 1, padding: 1 }}>
-              <Typography>{sense.name}</Typography>
-            </Box>
+            <Typography sx={{ border: 1, borderRadius: '100%', paddingX: 1, paddingY: 0.5 }} variant="body2">{sense.base}</Typography>
+            <Typography sx={{ border: 1, borderRadius: 1, marginLeft: 1, paddingX: 1, paddingY: 0.5 }} variant="body2">{sense.name}</Typography>
           </Grid>
         )
       })

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import useMediaQuery from '@mui/material/useMediaQuery';
+// import useMediaQuery from '@mui/material/useMediaQuery';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -24,7 +24,7 @@ import { Senses } from '@/app/components/Senses';
 import { Skills } from '@/app/components/Skills';
 
 export default function Home() {
-  const [tab, setTab] = useState(1);
+  const [tab, setTab] = useState(3);
 
   const handleTabChange = (e: React.SyntheticEvent, index: number) => setTab(index);
 
@@ -62,16 +62,18 @@ export default function Home() {
             <TabContext value={tab}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <TabList onChange={handleTabChange} aria-label="lab API tabs example">
-                  <Tab label="Background" value={1} />
+                  <Tab label="Actions" value={1} disabled />
                   <Tab label="Features and Traits" value={2} />
-                  <Tab label="Actions" value={3} disabled />
+                  <Tab label="Background" value={3} />
                 </TabList>
               </Box>
               <TabPanel value={1}>
-                <Background></Background>
               </TabPanel>
               <TabPanel value={2}>
                 <FeaturesTraits></FeaturesTraits>
+              </TabPanel>
+              <TabPanel value={3}>
+                <Background></Background>
               </TabPanel>
             </TabContext>
           </Box>
