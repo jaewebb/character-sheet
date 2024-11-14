@@ -42,23 +42,23 @@ export default function Home() {
     <main>
       <Character />
       <Grid container sx={{ mx: 2 }}>
-        <Grid size={{ xs: 12, md: 6 }}>
-          <Grid container spacing={2} sx={{ my: 1 }}>
+        <Grid size={{ xs: 12, lg: 7, xl: 6 }}>
+          <Grid container spacing={{ xs: 1, sm: 2, md: 2, lg: 2, xl: 2 }} sx={{ my: 1 }}>
             <AbilityScores />
           </Grid>
           <Grid container spacing={2} sx={{ my: 2 }}>
-            <Grid size={{ xs: 12, md: 6 }}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <SavingThrows />
               <Senses />
               <ProficienciesTraining />
             </Grid>
-            <Grid sx={{ border: 1, borderRadius: 2, padding: 2, textAlign: 'left'}} size={{ xs: 12, md: 6 }}>
+            <Grid sx={{ border: 1, borderRadius: 2, padding: 2, textAlign: 'left'}} size={{ xs: 12, sm: 6 }}>
               <Skills />
             </Grid>
           </Grid>
         </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
-          <Box sx={{ border: 1, borderRadius: 2, mx: {xs: 0, md: 2}, my: 1 }}>
+        <Grid size={{ xs: 12, lg: 5, xl: 6 }}>
+          <Box sx={{ border: 1, borderRadius: 2, mx: {xs: 0, lg: 2}, my: 1 }}>
             <TabContext value={tab}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <TabList onChange={handleTabChange} aria-label="lab API tabs example">
