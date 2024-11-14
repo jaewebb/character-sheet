@@ -28,11 +28,12 @@ export default function Home() {
 
   const handleTabChange = (e: React.SyntheticEvent, index: number) => setTab(index);
 
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  // TODO: look into bug with experimental features not following the preferred color scheme
+  // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   
   const theme = createTheme({
     colorSchemes: {
-      dark: prefersDarkMode,
+      dark: false,
     },
   });
 
