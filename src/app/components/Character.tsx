@@ -5,10 +5,10 @@ import Typography from "@mui/material/Typography";
 
 export function Character() {
   return (
-    <Grid container spacing={2} sx={{ marginBottom: 1, marginTop: 3.5, marginX: 2 }}>
+    <Grid container spacing={2} sx={{ mb: 1, mt: 3.5, mx: 2 }}>
       <Grid display="flex" alignItems="center" size="grow">
         <Avatar alt="Jae Webb" src="/avatar.png" sx={{ height: '74px', width: '75px' }} />
-        <Box sx={{ marginLeft: 2 }}>
+        <Box sx={{ ml: 2 }}>
           <Typography sx={{ fontSize: 'h6.fontSize' }} variant='h1'>Jae Webb</Typography>
           <Typography sx={{ fontSize: '14px' }} variant='h2'>Human Senior Web Application Developer</Typography>
           <Typography sx={{ fontSize: '14px' }} variant='h3'>Level 20</Typography>

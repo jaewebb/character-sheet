@@ -14,7 +14,7 @@ function JobHistory() {
   return (
     employment.map((job, index) => {
       return (
-        <Box key={`job-${index}`} sx={{ marginBottom: 1 }}>
+        <Box key={`job-${index}`} sx={{ mb: 1 }}>
           <Typography variant="overline">{job.title}</Typography>
           <Typography variant="body2">{job.location}</Typography>
           <Typography variant="body2">{job.start} - {job.end}</Typography>
@@ -31,7 +31,7 @@ function EducationHistory() {
   return (
     education.map((school, index) => {
       return (
-        <Box key={`school-${index}`}  sx={{ marginBottom: 1 }}>
+        <Box key={`school-${index}`}  sx={{ mb: 1 }}>
           <Typography variant="overline">{school.program}</Typography>
           <Typography variant="body2">{school.school}</Typography>
           <Typography variant="body2">{school.start} - {school.end}</Typography>
@@ -45,10 +45,10 @@ export function Background() {
     <Grid container>
       <Grid size={12}>
         <Typography variant="overline">Work Experience</Typography>
-        <Divider sx={{ marginBottom: 1 }} variant="fullWidth"></Divider>
+        <Divider sx={{ mb: 1 }} variant="fullWidth"></Divider>
         <JobHistory></JobHistory>
         <Typography variant="overline">Education</Typography>
-        <Divider sx={{ marginBottom: 1 }} variant="fullWidth"></Divider>
+        <Divider sx={{ mb: 1 }} variant="fullWidth"></Divider>
         <EducationHistory></EducationHistory>
       </Grid>
     </Grid>

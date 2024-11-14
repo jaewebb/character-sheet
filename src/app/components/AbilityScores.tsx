@@ -16,10 +16,10 @@ export function AbilityScores() {
   return (
     abilityScores.map((score: AbilityScore) => {
       return (
-        <Grid key={score.name} size={2} sx={{ border: 1, borderRadius: 2, textAlign: 'center', paddingY: 2}}>
+        <Grid key={score.name} size={{ xs: 4, md: 2 }} sx={{ border: 1, borderRadius: 2, textAlign: 'center', py: 2}}>
           <Typography variant="overline">{score.name}</Typography>
-          <Typography sx={{ border: 1, borderRadius: 1, fontSize: 'h4.fontSize', marginX: 1, marginBottom: 1 }} variant="h3">{score.modifier}</Typography>
-          <Typography sx={{ border: 1, borderRadius: '100%', fontSize: 'h6.fontSize', marginX: 3 }} variant="h4">{score.base}</Typography>
+          <Typography sx={{ border: 1, borderRadius: 1, fontSize: 'h4.fontSize', mx: 1, mb: 1 }} variant="h3">{score.modifier}</Typography>
+          <Typography sx={{ border: 1, borderRadius: '100%', fontSize: 'h6.fontSize', mx: 3 }} variant="h4">{score.base}</Typography>
         </Grid>
       )
     })

@@ -21,7 +21,7 @@ export function SavingThrows() {
       </Grid>
       { saves.map((save: SavingThrow) => {
         return (
-            <Grid key={save.name} size={6} sx={{ border: 1, borderRadius: 2, textAlign: 'center', paddingY: 1}}>
+            <Grid key={save.name} size={6} sx={{ border: 1, borderRadius: 2, textAlign: 'center', py: 1}}>
               <Box>{save.name} {save.base}</Box>
             </Grid>
         )

@@ -62,7 +62,7 @@ export function Skills() {
             >
               <TableCell align="center" width="30px">{row.expertise ? '◉' : row.proficiency ? '●' : '○' }</TableCell>
               <TableCell>{row.name}</TableCell>
-              <TableCell width="30px"><Box sx={{ border: 1, borderRadius: 2, paddingY: 0.5, textAlign: 'center' }}>{row.bonus}</Box></TableCell>
+              <TableCell width="30px"><Box sx={{ border: 1, borderRadius: 2, py: 0.5, textAlign: 'center' }}>{row.bonus}</Box></TableCell>
             </TableRow>
           ))}
         </TableBody>
