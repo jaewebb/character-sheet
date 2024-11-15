@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-// import useMediaQuery from '@mui/material/useMediaQuery';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
 import BoltIcon from '@mui/icons-material/Bolt';
 import Box from '@mui/material/Box';
@@ -29,17 +30,17 @@ export default function Home() {
 
   const handleTabChange = (e: React.SyntheticEvent, index: number) => setTab(index);
 
-  // TODO: look into bug with experimental features not following the preferred color scheme
-  // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   
   const theme = createTheme({
     colorSchemes: {
-      dark: false,
+      dark: prefersDarkMode,
     },
   });
 
   return (
     <ThemeProvider theme={theme}>
+    <CssBaseline />
     <main>
       <Character />
       <Grid container sx={{ mx: 2 }}>
