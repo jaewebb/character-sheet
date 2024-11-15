@@ -1,16 +1,19 @@
 'use client';
 
 import { useState } from 'react';
-import useMediaQuery from '@mui/material/useMediaQuery';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import BoltIcon from '@mui/icons-material/Bolt';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import LightModeIcon from '@mui/icons-material/LightMode';
+
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import Paper from '@mui/material/Paper';
+import Switch from '@mui/material/Switch';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
@@ -27,22 +30,43 @@ import { Skills } from '@/app/components/Skills';
 
 export default function Home() {
   const [tab, setTab] = useState(3);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleTabChange = (e: React.SyntheticEvent, index: number) => setTab(index);
+  const handleThemeChange = (e: React.SyntheticEvent, checked: boolean) => setIsDarkMode(checked);
 
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const themeLight = createTheme({
+    palette: {
+      background: {
+        default: '#eee'
+      }
+    }
+  });
   
-  const theme = createTheme({
+  const themeDark = createTheme({
     colorSchemes: {
-      dark: prefersDarkMode,
+      dark: true,
     },
   });
 
   return (
-    <ThemeProvider theme={theme}>
-    <CssBaseline />
+    <ThemeProvider theme={isDarkMode ? themeDark : themeLight }>
+      <CssBaseline />
     <main>
-      <Character />
+      <Grid container>
+        <Grid size={10}>
+          <Character />
+        </Grid>
+        <Grid display="flex" justifyContent="end" alignItems="center" size={2} sx={{ px: 2 }}>
+          <LightModeIcon fontSize="inherit" />
+          <Switch
+            checked={isDarkMode}
+            onChange={handleThemeChange}
+            inputProps={{ 'aria-label': isDarkMode ? 'Switch to light mode' : 'Switch to dark mode' }}
+          />
+          <DarkModeIcon fontSize="inherit" />
+        </Grid>
+      </Grid>
       <Grid container sx={{ mx: 2 }}>
         <Grid size={{ xs: 12, lg: 7, xl: 6 }}>
           <Grid container spacing={{ xs: 1, sm: 2, md: 2, lg: 2, xl: 2 }} sx={{ my: 1 }}>
@@ -60,7 +84,7 @@ export default function Home() {
           </Grid>
         </Grid>
         <Grid size={{ xs: 12, lg: 5, xl: 6 }}>
-          <Box component={Paper} sx={{ borderRadius: 2, mx: {xs: 0, lg: 2}, my: 1 }}>
+          <Box component={Paper} sx={{ borderRadius: 2, ml: {xs: 0, lg: 2}, my: 1 }}>
             <TabContext value={tab}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <TabList onChange={handleTabChange} aria-label="lab API tabs example">
