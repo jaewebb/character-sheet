@@ -18,9 +18,9 @@ export function AbilityScores() {
     abilityScores.map((score: AbilityScore) => {
       return (
         <Grid key={score.name} component={Paper} size={{ xs: 4, sm: 2 }} sx={{ borderRadius: 2, textAlign: 'center', py: 2}}>
-          <Typography variant="overline">{score.name}</Typography>
-          <Typography sx={{ border: 1, borderRadius: 1, fontSize: 'h4.fontSize', mx: 1, mb: 1 }} variant="h3">{score.modifier}</Typography>
-          <Typography sx={{ border: 1, borderRadius: '100%', fontSize: 'h6.fontSize', mx: 3 }} variant="h4">{score.base}</Typography>
+          <Typography variant="overline" data-testid={`ability-score-${score.name}`}>{score.name}</Typography>
+          <Typography sx={{ border: 1, borderRadius: 1, fontSize: 'h4.fontSize', mx: 1, mb: 1 }} variant="h3" data-testid={`ability-score-${score.name}-modifier`}>{score.modifier}</Typography>
+          <Typography sx={{ border: 1, borderRadius: '100%', fontSize: 'h6.fontSize', mx: 3 }} variant="h4" data-testid={`ability-score-${score.name}-base`}>{score.base}</Typography>
         </Grid>
       )
     })

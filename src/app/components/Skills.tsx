@@ -49,9 +49,15 @@ export function Skills() {
       <Table aria-label="Skills table" size="small">
         <TableHead>
           <TableRow>
-            <TableCell align="center"><Typography variant="overline">Prof</Typography></TableCell>
-            <TableCell><Typography variant="overline">Skill</Typography></TableCell>
-            <TableCell align="right"><Typography variant="overline">Bonus</Typography></TableCell>
+            <TableCell align="center">
+              <Typography data-testid="heading-prof" variant="overline">Prof</Typography>
+            </TableCell>
+            <TableCell>
+              <Typography data-testid="heading-skill" variant="overline">Skill</Typography>
+            </TableCell>
+            <TableCell align="right">
+              <Typography data-testid="heading-bonus" variant="overline">Bonus</Typography>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

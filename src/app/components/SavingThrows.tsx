@@ -18,12 +18,14 @@ export function SavingThrows() {
   return (
     <Grid component={Paper} container spacing={2} sx={{ borderRadius: 2, padding: 2 }}>
       <Grid size={12}>
-        <Typography variant="overline">Saving Throws</Typography>
+        <Typography component="h4" variant="overline">Saving Throws</Typography>
       </Grid>
       { saves.map((save: SavingThrow) => {
         return (
           <Grid key={save.name} size={6} sx={{ border: 1, borderRadius: 2, textAlign: 'center', py: 1}}>
-            <Box>{save.name} {save.base}</Box>
+            <Box>
+              <span data-testid={`saving-throw-${save.name}`}>{save.name}</span> <span data-testid={`saving-throw-${save.name}-base`}>{save.base}</span>
+            </Box>
           </Grid>
         )
       })
