@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 
 import type { Sense } from '@/app/types/Sense'
 
-export function Senses() {
+export function SensesList() {
   const senses = [
     { base: '15', name: 'Perception' },
     { base: '15', name: 'Investigation' },

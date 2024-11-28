@@ -17,8 +17,10 @@ import { Character } from '@/app/components/Character';
 import { CharacterTabs } from '@/app/components/CharacterTabs';
 import { ProficienciesTraining } from '@/app/components/ProficienciesTraining';
 import { SavingThrows } from '@/app/components/SavingThrows';
-import { Senses } from '@/app/components/Senses';
+import { SensesList } from '@/app/components/SensesList';
 import { Skills } from '@/app/components/Skills';
+import { StatsGrid } from '@/app/components/StatsGrid';
+
 import { ThemeToggle } from '@/app/components/ThemeToggle';
 
 export default function Home() {
@@ -51,15 +53,20 @@ export default function Home() {
             <ThemeToggle isDarkMode={isDarkMode} handleThemeChange={handleThemeChange} />
           </Grid>
         </Grid>
-        <Grid container sx={{ mx: 2 }}>
+        <Grid container spacing={2} sx={{ mx: 2, my: 1 }}>
           <Grid size={{ xs: 12, lg: 7, xl: 6 }}>
-            <Grid container spacing={{ xs: 1, sm: 2, md: 2, lg: 2, xl: 2 }} sx={{ my: 1 }}>
-              <AbilityScores />
-            </Grid>
-            <Grid container spacing={2} sx={{ my: 2 }}>
+            <AbilityScores />
+          </Grid>
+          <Grid size={{ xs: 12, lg: 5, xl: 6 }}>
+            <StatsGrid isDarkMode={isDarkMode} />
+          </Grid>
+        </Grid>
+        <Grid container spacing={2} sx={{ mx: 2, my: 2 }}>
+          <Grid size={{ xs: 12, lg: 7, xl: 6 }}>
+            <Grid container spacing={2}>
               <Grid size={{ xs: 12, sm: 6 }}>
                 <SavingThrows />
-                <Senses />
+                <SensesList />
                 <ProficienciesTraining />
               </Grid>
               <Grid size={{ xs: 12, sm: 6 }} sx={{ borderRadius: 2 }}>
@@ -68,7 +75,7 @@ export default function Home() {
             </Grid>
           </Grid>
           <Grid size={{ xs: 12, lg: 5, xl: 6 }}>
-            <Box component={Paper} sx={{ borderRadius: 2, ml: {xs: 0, lg: 2}, my: 1 }}>
+            <Box component={Paper} sx={{ borderRadius: 2 }}>
               <CharacterTabs />
             </Box>
           </Grid>
